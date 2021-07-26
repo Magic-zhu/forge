@@ -18,6 +18,6 @@ export default defineComponent({
         width: 100%;
         height: 40px;
         background-color: @background;
-        border-bottom: 1px solid #ffffff;
+        border-bottom: 1px solid #cccccc;
     }
 </style>

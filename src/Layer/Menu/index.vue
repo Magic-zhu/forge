@@ -13,9 +13,10 @@ export default defineComponent({
 </script>
 
 <style lang='less'>
+    @import '../../UI/theme.less';
     .menu-wrapper{
         width: 300px;
         height: 100%;
-        background-color: red;
+        background-color: @dark-background;
     }
 </style>

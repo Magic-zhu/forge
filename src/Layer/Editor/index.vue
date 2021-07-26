@@ -46,7 +46,7 @@ export default defineComponent({
 .Editor-wrapper {
   width: 100%;
   height: 100%;
-  background-color: blue;
+  background-color: #303030;
   #editor {
     width: 100%;
     height: 100%;
