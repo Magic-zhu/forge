@@ -1,16 +1,21 @@
 <template>
-  
+    <div class="menu-wrapper"></div>
 </template>
 
 <script lang='ts'>
-export default {
-    name:'ToolBar',
+import { defineComponent } from 'vue'
+export default defineComponent({
+    name:'Menu',
     setup(){
         
     }
-}
+})
 </script>
 
-<style>
-
+<style lang='less'>
+    .menu-wrapper{
+        width: 300px;
+        height: 100%;
+        background-color: red;
+    }
 </style>

@@ -4,5 +4,5 @@ import './UI/reset.css'
 import Router from './routes/index'
 
 const VueApp = createApp(App)
-VueApp.mount('#app')
 VueApp.use(Router)
+VueApp.mount('#app')

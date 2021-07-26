@@ -1,16 +1,21 @@
 <template>
-  
+    <div class="Pannel-wrapper"></div>
 </template>
 
 <script lang='ts'>
-export default {
-    name:'ToolBar',
+import { defineComponent } from 'vue'
+export default defineComponent({
+    name:'Pannel',
     setup(){
         
     }
-}
+})
 </script>
 
-<style>
-
+<style lang='less'>
+    .Pannel-wrapper{
+        width: 300px;
+        height: 100%;
+        background-color: greenyellow;
+    }
 </style>
