@@ -1,11 +1,11 @@
 <template>
-    <div class="menu-wrapper"></div>
+    <div class="MoveItem-wrapper"></div>
 </template>
 
 <script lang='ts'>
 import {defineComponent} from 'vue';
 export default defineComponent({
-  name: 'Menu',
+  name: 'MoveItem',
   setup() {
 
   },
@@ -14,7 +14,7 @@ export default defineComponent({
 
 <style lang='less'>
     @import '../../UI/theme.less';
-    .menu-wrapper{
+    .MoveItem-wrapper{
         width: 300px;
         height: 100%;
         background-color: @dark-background;
