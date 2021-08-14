@@ -1,5 +1,9 @@
 <template>
   <div class="Editor-wrapper">
+    <div class="Editor-suspension">
+      <div>手机模式</div>
+      <div>pc模式</div>
+    </div>
     <div class="" id="editor">
       <div class="target"></div>
       <div class="target2"></div>
@@ -142,26 +146,5 @@ export default defineComponent({
 </script>
 
 <style lang="less">
-.Editor-wrapper {
-  width: 100%;
-  height: 100%;
-  background-color: #303030;
-  #editor {
-    width: 100%;
-    height: 100%;
-    position: relative;
-  }
-  .target {
-    width: 200px;
-    height: 200px;
-    background-color: grey;
-    position: absolute;
-  }
-  .target2 {
-    width: 200px;
-    height: 200px;
-    background-color: pink;
-    position: absolute;
-  }
-}
+@import './index.less';
 </style>
