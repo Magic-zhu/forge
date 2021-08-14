@@ -1,11 +1,11 @@
 <template>
-    <div class="Pannel-wrapper"></div>
+    <div class="MoveItem-wrapper"></div>
 </template>
 
 <script lang='ts'>
 import {defineComponent} from 'vue';
 export default defineComponent({
-  name: 'Pannel',
+  name: 'MoveItem',
   setup() {
 
   },
@@ -13,8 +13,8 @@ export default defineComponent({
 </script>
 
 <style lang='less'>
- @import '../../UI/theme.less';
-    .Pannel-wrapper{
+    @import '../../UI/theme.less';
+    .MoveItem-wrapper{
         width: 300px;
         height: 100%;
         background-color: @dark-background;

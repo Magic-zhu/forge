@@ -14,7 +14,7 @@ export default defineComponent({
 @import "../../UI/theme.less";
 .StatusBar-wrapper {
   width: 100%;
-  height: 40px;
+  height: 28px;
   background-color: @background;
 }
 </style>

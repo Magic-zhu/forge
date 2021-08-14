@@ -1,26 +1,35 @@
 .Editor-wrapper {
-    width: 100%;
-    height: 100%;
-    background-color: #303030;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    #editor {
-      width: 325px;
-      height: 675px;
-      position: relative;
-      background-color:#ffffff;
-    }
-    .target {
-      width: 200px;
-      height: 200px;
-      background-color: grey;
-      position: absolute;
-    }
-    .target2 {
-      width: 200px;
-      height: 200px;
-      background-color: pink;
-      position: absolute;
-    }
+  width: 100%;
+  height: 100%;
+  background-color: #303030;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow-y: auto;
+  #editor {
+    width: 375px;
+    height: 667px;
+    position: relative;
+    background-color: #ffffff;
+    overflow-y: auto;
   }
+  .Editor-suspension {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    display: flex;
+  }
+  .target {
+    width: 200px;
+    height: 200px;
+    background-color: grey;
+    position: absolute;
+  }
+  .target2 {
+    width: 200px;
+    height: 200px;
+    background-color: pink;
+    position: absolute;
+  }
+}
