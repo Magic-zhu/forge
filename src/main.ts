@@ -7,3 +7,4 @@ import Router from './routes/index';
 const VueApp = createApp(App);
 VueApp.use(Router);
 VueApp.mount('#app');
+
