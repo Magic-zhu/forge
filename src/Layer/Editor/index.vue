@@ -140,6 +140,9 @@ export default defineComponent({
       const editor = document.getElementById('editor');
       init(editor);
     });
+    return {
+
+    };
   },
 });
 </script>
