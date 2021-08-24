@@ -1,5 +1,5 @@
 <template>
-    <div class="Pannel-wrapper"></div>
+    <div class="Panel-wrapper"></div>
 </template>
 
 <script lang='ts'>
@@ -14,9 +14,5 @@ export default defineComponent({
 
 <style lang='less'>
  @import '../../UI/theme.less';
-    .Pannel-wrapper{
-        width: 300px;
-        height: 100%;
-        background-color: @dark-background;
-    }
+ @import "./index";
 </style>
