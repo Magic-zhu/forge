@@ -157,19 +157,15 @@ a:active {
   height: 66px;
   width: 106px;
   background: linear-gradient(
-    60deg,
-    #f79533,
-    #f37055,
-    #ef4e7b,
-    #a166ab,
-    #5073b8,
-    #1098ad,
-    #07b39b,
-    #6fba82
+    45deg,
+    #65bffa,
+    #14a2f5,
+    #9a0cdb,
+    #7d0daa
   );
   border-radius: 4px;
   z-index: 1;
-  animation: animatedgradient 3s ease alternate infinite;
+  /* animation: animatedgradient 3s ease alternate infinite; */
   background-size: 300% 300%;
 }
 @keyframes animatedgradient {
@@ -183,3 +179,7 @@ a:active {
     background-position: 0% 50%;
   }
 }
+/* #f79533,
+#f37055,
+#ef4e7b,
+#a166ab, */

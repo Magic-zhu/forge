@@ -4,8 +4,8 @@ module.exports = {
     'es2021': true,
   },
   'extends': [
-    'plugin:vue/essential',
     'google',
+    'plugin:vue/essential',
   ],
   'parserOptions': {
     'ecmaVersion': 12,
