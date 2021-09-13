@@ -6,27 +6,32 @@
       <i class="fa fa-circle-o-notch fa-spin"></i>
     </div> -->
     <div class="" id="editor">
+
       <MoveItem id='xx' :editor='editor' :container='editor' v-if="editor"/>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import {defineComponent, onMounted} from 'vue';
+import {defineComponent, onMounted, ref} from 'vue';
 import MoveItem from '../../components/MoveItem/index.vue';
-// import ForgeNode from '../../core/ForgeNode';
+import ForgeNode from '../../core/ForgeNode';
 
 export default defineComponent({
   name: 'Editor',
-  component: {MoveItem},
+  components: {MoveItem},
   setup() {
-    let editor;
+    const editor:any= ref(null);
+    const root = new ForgeNode({
+      type: 'root',
+    });
+    const nodeTree = ref(root);
     onMounted(() => {
-      editor = document.getElementById('editor');
-      // new ForgeNode({});
+      editor.value = document.getElementById('editor');
+      console.log(editor);
     });
     return {
-      boxList: [{}],
+      nodeTree,
       editor,
     };
   },

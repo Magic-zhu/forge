@@ -1,7 +1,10 @@
 interface Options {
   type:string
-  tag:string
+  tag?:string
+  class?:string
 }
+
+let uid:number = 0;
 /**
  *
  *
@@ -23,6 +26,7 @@ class ForgeNode {
    * @memberof ForgeNode
    */
   constructor(options:Options) {
+    this.id = 'forge' + uid++;
     this.type = options.type;
   }
 

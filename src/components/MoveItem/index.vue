@@ -17,30 +17,28 @@ export default defineComponent({
         target: document.getElementById(props.id),
         container: props.container,
         draggable: true,
+        bounds: {'left': 0, 'top': 0, 'right': 375},
         resizable: true,
         scalable: true,
-        rotatable: true,
         warpable: true,
         snappable: true,
         snapCenter: true,
         snapHorizontal: true,
         snapVertical: true,
-        // Enabling pinchable lets you use events that
-        // can be used in draggable, resizable, scalable, and rotateable.
         pinchable: true, // ["resizable", "scalable", "rotatable"]
         origin: true,
         keepRatio: true,
         // Resize, Scale Events at edges.
-        // edge: true,
+        edge: true,
         throttleDrag: 0,
         throttleResize: 0,
         throttleScale: 0,
         throttleRotate: 0,
-        // dragArea:true,
+        dragArea: true,
+        className: 'moveItem',
       });
       instance
           .on('dragStart', ({target, clientX, clientY}) => {
-            console.log('onDragStart', target);
           })
           .on('drag', ({
             target,
@@ -64,7 +62,14 @@ export default defineComponent({
           },
           )
           .on('dragEnd', ({target, isDrag, clientX, clientY}) => {
-            console.log('onDragEnd', target, isDrag);
+          })
+          .on('resize', ({
+            target,
+            width,
+            height,
+          }) => {
+            target.style.width = `${width}px`;
+            target.style.height = `${height}px`;
           });
     });
     return {
@@ -78,8 +83,12 @@ export default defineComponent({
 <style lang='less'>
 @import "../../UI/theme.less";
 .MoveItem-wrapper {
-  width: 300px;
-  height: 100%;
-  background-color: @dark-background;
+  width: 100px;
+  height: 100px;
+  background-color: rgba(0,0,0,0);
+  position:absolute;
+  left: 0;
+  top:0;
 }
+
 </style>
