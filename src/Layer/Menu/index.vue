@@ -1,6 +1,10 @@
 <template>
   <div class="menu-wrapper" :style="{ width: ifShowMenu + 'px' }">
-    <div class="menu-hidden" @click="hiddenMenu()">
+    <div
+      class="menu-hidden"
+      @click="hiddenMenu()"
+      :style="ifShowMenu === 0 ? { opacity: 1 } : ''"
+    >
       <i
         class="fa fa-angle-double-left"
         aria-hidden="true"
@@ -13,23 +17,23 @@
       ></i>
     </div>
     <div class="boxPanel">
-          <div
-      class="menu-item"
-      v-for="item in list"
-      :key="item.name"
-      v-show="ifSHowItem"
-      @click="addToEditor(item)"
-    >
-      <div class="gradient-border"></div>
-      <div class="menu-item-content">
-        <div class="menu-icon">
-          <i :class="item.icon" aria-hidden="true"></i>
+      <div
+        class="menu-item"
+        v-for="item in list"
+        :key="item.name"
+        v-show="ifSHowItem"
+        @click="addToEditor(item)"
+        draggable="true"
+      >
+        <div class="gradient-border"></div>
+        <div class="menu-item-content">
+          <div class="menu-icon">
+            <i :class="item.icon" aria-hidden="true"></i>
+          </div>
+          <div class="menu-name">{{ item.name }}</div>
         </div>
-        <div class="menu-name">{{ item.name }}</div>
       </div>
     </div>
-    </div>
-
   </div>
 </template>
 

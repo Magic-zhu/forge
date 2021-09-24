@@ -13,7 +13,7 @@ let uid:number = 0;
 class ForgeNode {
   type: string = '';
   tag: string = '';
-  id: string = '';
+  id: number = 0;
   class: string = '';
   attributes: [] = [];
   stylesheet: {} = {};
@@ -26,7 +26,7 @@ class ForgeNode {
    * @memberof ForgeNode
    */
   constructor(options:Options) {
-    this.id = 'forge' + uid++;
+    this.id = uid++;
     this.type = options.type;
   }
 

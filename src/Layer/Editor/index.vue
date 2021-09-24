@@ -16,6 +16,7 @@
 import {defineComponent, onMounted, ref} from 'vue';
 import MoveItem from '../../components/MoveItem/index.vue';
 import ForgeNode from '../../core/ForgeNode';
+import {dragOver} from '@core/Drag';
 
 export default defineComponent({
   name: 'Editor',
@@ -24,10 +25,18 @@ export default defineComponent({
     const editor:any= ref(null);
     const root = new ForgeNode({
       type: 'root',
+      tag: 'div',
     });
+    const testNode1 = new ForgeNode({
+      type: 'flex',
+      tag: 'div',
+    });
+    root.appendChild(testNode1);
+    console.log(root);
     const nodeTree = ref(root);
     onMounted(() => {
       editor.value = document.getElementById('editor');
+      dragOver(editor.value);
       console.log(editor);
     });
     return {
