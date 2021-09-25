@@ -179,10 +179,11 @@ a:active {
 #a166ab, */
 
 .moveable-line {
-  background-color: #f79533 !important;
+  background-color: #fd93a9 !important;
 }
+
 .moveable-control {
-  background-color: #f79533 !important;
+  background-color: #fd93a9 !important;
   width: 10px !important;
   height: 10px !important;
   margin-top: -5px !important;
@@ -190,5 +191,6 @@ a:active {
 }
 
 .moveable-rotation {
-  border-color: #f79533 !important;
+  border-color: #fd93a9 !important;
 }
+

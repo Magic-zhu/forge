@@ -1,5 +1,5 @@
 <template>
-  <div class="MoveItem-wrapper" :id="id"></div>
+  <div class="MoveItem-wrapper" :id="id">我是附表</div>
 </template>
 
 <script lang='ts'>
@@ -19,21 +19,15 @@ export default defineComponent({
         draggable: true,
         bounds: {'left': 0, 'top': 0, 'right': 375},
         resizable: true,
-        scalable: true,
-        warpable: true,
         snappable: true,
         snapCenter: true,
         snapHorizontal: true,
         snapVertical: true,
         pinchable: true, // ["resizable", "scalable", "rotatable"]
         origin: true,
-        keepRatio: true,
+        keepRatio: false,
         // Resize, Scale Events at edges.
-        edge: true,
-        throttleDrag: 0,
-        throttleResize: 0,
-        throttleScale: 0,
-        throttleRotate: 0,
+        edge: false,
         dragArea: true,
         className: 'moveItem',
       });
@@ -54,7 +48,6 @@ export default defineComponent({
             clientX,
             clientY,
           }) => {
-            console.log('onDrag left, top', left, top);
                 target!.style.left = `${left}px`;
                 target!.style.top = `${top}px`;
                 // console.log("onDrag translate", dist);
@@ -89,6 +82,7 @@ export default defineComponent({
   position:absolute;
   left: 0;
   top:0;
+  color: red;
 }
 
 </style>

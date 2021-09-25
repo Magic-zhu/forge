@@ -26,7 +26,9 @@
         draggable="true"
       >
         <div class="gradient-border"></div>
-        <div class="menu-item-content">
+        <div class="menu-item-content"
+          @dragstart="dragHandler(item.type,$event)"
+        >
           <div class="menu-icon">
             <i :class="item.icon" aria-hidden="true"></i>
           </div>
@@ -40,6 +42,7 @@
 <script lang="ts">
 import {defineComponent, ref} from 'vue';
 import {BOX_LIST} from './config';
+import {dragStart} from '@core/Drag';
 export default defineComponent({
   name: 'Menu',
   setup() {
@@ -57,12 +60,16 @@ export default defineComponent({
       }
     };
     const addToEditor = () => {};
+    const dragHandler = (type:string, $event:any) => {
+      dragStart($event, type);
+    };
     return {
       list: BOX_LIST,
-      hiddenMenu,
-      addToEditor,
       ifShowMenu,
       ifSHowItem,
+      hiddenMenu,
+      addToEditor,
+      dragHandler,
     };
   },
 });
