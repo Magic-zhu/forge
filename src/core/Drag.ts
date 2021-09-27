@@ -1,6 +1,4 @@
 import dragModel from '@models/drag.model';
-console.log(dragModel);
-
 
 /**
  *
@@ -8,7 +6,8 @@ console.log(dragModel);
  * @param {*} data - data Transfer
  */
 export const dragStart = (event:any, data:any) =>{
-
+  const {dataTransfer} = event;
+  dataTransfer.setData('text/plain', data);
 };
 
 export const dragOver = (dom: HTMLElement) => {
@@ -27,7 +26,6 @@ export const dragEnter = (dom: HTMLElement) => {
       'dragenter',
       function(e: any) {
         dragModel.originBackground = e.target.style.background || '';
-        console.log(dragModel);
         e.target.style.background = dragModel.SELECTED_COLOR;
         e.preventDefault();
         e.stopPropagation();
@@ -53,11 +51,12 @@ export const drop = (dom: HTMLElement, callback?: Function) => {
   dom.addEventListener(
       'drop',
       function(e: any) {
-        console.log(e);
         const target = e.target;
+        const data = e.dataTransfer.getData('text');
         e.target.style.background = dragModel.originBackground;
         dragModel.originBackground = '';
-        callback && callback(target);
+        callback && callback(target, data);
+        e.dataTransfer.clearData();
         e.preventDefault();
         e.stopPropagation();
       },

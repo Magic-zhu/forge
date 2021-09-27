@@ -23,12 +23,11 @@
         :key="item.name"
         v-show="ifSHowItem"
         @click="addToEditor(item)"
+        @dragstart="dragHandler(item.type,$event)"
         draggable="true"
       >
         <div class="gradient-border"></div>
-        <div class="menu-item-content"
-          @dragstart="dragHandler(item.type,$event)"
-        >
+        <div class="menu-item-content">
           <div class="menu-icon">
             <i :class="item.icon" aria-hidden="true"></i>
           </div>
@@ -61,6 +60,7 @@ export default defineComponent({
     };
     const addToEditor = () => {};
     const dragHandler = (type:string, $event:any) => {
+      console.log('dragstart', type, $event);
       dragStart($event, type);
     };
     return {

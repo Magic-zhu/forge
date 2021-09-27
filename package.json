@@ -10,9 +10,11 @@
     "localforage": "^1.10.0",
     "moveable": "^0.26.0",
     "vue": "^3.0.5",
-    "vue-router": "^4.0.10"
+    "vue-router": "^4.0.10",
+    "vuex": "^4.0.2"
   },
   "devDependencies": {
+    "@types/node": "^16.10.1",
     "@typescript-eslint/eslint-plugin": "^4.28.4",
     "@typescript-eslint/parser": "^4.28.4",
     "@vitejs/plugin-vue": "^1.2.5",

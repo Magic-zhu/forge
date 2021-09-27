@@ -1,11 +1,27 @@
 .forge-item-wrapper {
   color: black;
-  .forge-item {
-    width: 100%;
-    height: 100px;
-    background: blueviolet;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+  box-sizing: border-box;
 }
+.forge-item-wrapper-root{
+  .forge-item-wrapper();
+  width: 100%;
+  min-height: 100%;
+  background-color:white;
+}
+.forge-item-wrapper-flex {
+  .forge-item-wrapper();
+  display: flex;
+  width: 100%;
+  height: 100px;
+  align-items: center;
+  justify-content: center;
+  background-color:blue;
+}
+.forge-item-wrapper-img {
+  .forge-item-wrapper();
+  display: block;
+  width: 100px;
+  height: 100px;
+  background-color:yellow;
+}
+

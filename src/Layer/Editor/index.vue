@@ -7,10 +7,10 @@
     </div> -->
     <div class="" id="editor">
       <!-- must be rendered after edtior!==null -->
-      <div v-if="editor">
-        <ForgeItem :forgeNode="nodeTree"/>
+      <div v-if="editor" class="editor-box">
+        <ForgeItem :forgeNode="nodeTree" ref="root"/>
       <!-- <MoveItem v-for="item in nodeTree.children"
-        :key="item.id" :id='item.id' :editor='editor'
+        :key="item.id" :id='item.id' :editor='deditor'
         :container='editor'/> -->
       </div>
     </div>
@@ -23,6 +23,7 @@ import MoveItem from '@components/MoveItem/index.vue';
 import ForgeItem from '@components/ForgeItem/index.vue';
 import ForgeNode from '../../core/ForgeNode';
 import {dragOver, dragEnter, drop, dragLeave} from '@core/Drag';
+import {findForgeNodePosition} from '@core/Util';
 
 export default defineComponent({
   name: 'Editor',
@@ -34,33 +35,26 @@ export default defineComponent({
       type: 'root',
       tag: 'div',
     });
-    const testNode1 = new ForgeNode({
-      type: 'flex',
-      tag: 'div',
-    });
-    const testNode2 = new ForgeNode({
-      type: 'flex',
-      tag: 'div',
-    });
-    root.appendChild(testNode1);
-    testNode1.appendChild(testNode2);
-    console.log(root);
     const nodeTree = ref(root);
     onMounted(() => {
       editor.value = document.getElementById('editor');
       dragOver(editor.value);
       dragEnter(editor.value);
       dragLeave(editor.value);
-      drop(editor.value, ()=>{
-        root.appendChild(new ForgeNode({
-          type: 'flex',
+      drop(editor.value, (s:any, type:string)=>{
+        console.log(type);
+        const uid = s.dataset.uid;
+        const node = findForgeNodePosition(uid, root);
+        node.appendChild(new ForgeNode({
+          type: type,
           tag: 'div',
         }));
-        console.log(root);
         nodeTree.value = root;
-        console.log('ins', instance);
-        instance.proxy.$forceUpdate();
-        console.log(2);
+        if (instance!==null) {
+          instance?.proxy?.$forceUpdate();
+          // @ts-ignore
+          instance.refs.root.update();
+        }
       });
     });
     return {
