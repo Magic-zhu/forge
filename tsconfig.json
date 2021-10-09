@@ -22,8 +22,10 @@
       "@models/*": [
         "./src/models/*"
       ],
-    },
-    "types": ["element-plus/global"]
+      "@utils/*": [
+        "./src/utils/*"
+      ],
+    }
   },
   "include": [
     "src/**/*.ts",

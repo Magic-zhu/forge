@@ -1,10 +1,14 @@
+import {simpleClone} from '@utils/index';
 interface Options {
   type:string
   tag?:string
-  class?:string
+  className?:string
+  idName?:string
+  attributes?:Object
 }
 
 let uid:number = 0;
+
 /**
  *
  *
@@ -14,9 +18,9 @@ class ForgeNode {
   type: string = '';
   tag: string = '';
   id: string = '';
-  class: string = '';
-  attributes: [] = [];
-  stylesheet: {} = {};
+  className: string = '';
+  idName: string = '';
+  attributes: {} = {};
   parent: ForgeNode | null = null;
   children: ForgeNode[] = [];
 
@@ -28,6 +32,7 @@ class ForgeNode {
   constructor(options:Options) {
     this.id = 'forge' + uid++;
     this.type = options.type;
+    this.className = options.className ||'';
   }
 
   /**
@@ -38,6 +43,20 @@ class ForgeNode {
   appendChild(child:ForgeNode): void {
     child.parent = this;
     this.children.push(child);
+  }
+
+  /**
+   *
+   * clone self
+   * @memberof ForgeNode
+   */
+  clone() {
+    new ForgeNode({
+      type: this.type,
+      className: this.className,
+      idName: this.idName,
+      attributes: simpleClone(this.attributes),
+    });
   }
 }
 
