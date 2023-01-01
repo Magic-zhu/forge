@@ -1,11 +1,16 @@
-import {createRouter, createWebHistory} from 'vue-router';
+import { createRouter, createWebHistory } from "vue-router";
 
 // 路由信息
 const routes = [
   {
-    path: '/',
-    name: 'home',
-    component: () => import('../views/home/index.vue'),
+    path: "/",
+    name: "main",
+    component: () => import("../views/Main/index.vue"),
+  },
+  {
+    path: "/editor",
+    name: "editor",
+    component: () => import("../views/BluePrintEditor/index.vue"),
   },
 ];
 

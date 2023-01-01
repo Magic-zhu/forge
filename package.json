@@ -1,12 +1,13 @@
 {
-  "name": "my-vue-app",
+  "name": "forge",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
+    "start": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "serve": "vite preview"
   },
   "dependencies": {
+    "dark-ui": "^0.0.2",
     "localforage": "^1.10.0",
     "moveable": "^0.26.0",
     "vue": "^3.0.5",

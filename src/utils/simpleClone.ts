@@ -1,5 +1,5 @@
-const simpleClone = (input: any [] | Object) => {
-  return JSON.parse(JSON.stringify(input));
+const simpleClone = (input: any[] | Object) => {
+  const t = JSON.stringify(input);
+  return JSON.parse(t);
 };
-export default simpleClone
-;
+export default simpleClone;

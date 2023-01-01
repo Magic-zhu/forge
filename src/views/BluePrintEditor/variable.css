@@ -1,0 +1,28 @@
+.variable-panel {
+  width: 300px;
+  box-sizing: border-box;
+}
+.variable-panel .content {
+  width: 100%;
+}
+.variable-panel .variable {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 5px 20px;
+  color: white;
+  font-size: 12px;
+  box-sizing: border-box;
+  user-select: none;
+}
+.variable-panel .variable:hover {
+  background-color: #26bbff;
+}
+.variable-panel .variable .variable-type {
+  display: flex;
+  align-items: center;
+}
+.variable-panel .variable .variable-type .variable-type-text {
+  margin-left: 10px;
+  width: 50px;
+}
