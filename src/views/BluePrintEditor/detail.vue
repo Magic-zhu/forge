@@ -1,13 +1,31 @@
 <template>
   <div class="container">
-    <div></div>
+    <AttributeTitle
+      label="变量属性"
+      :ExpandStatus="expandStatus"
+      @onClick="show"
+    />
+    <div v-show="expandStatus">
+      <div></div>
+    </div>
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, ref } from "vue";
+import { AttributeTitle } from "dark-ui";
 export default defineComponent({
+  components: {
+    AttributeTitle,
+  },
   setup() {
-    return {};
+    const expandStatus = ref(true);
+    const show = () => {
+      expandStatus.value = !expandStatus.value;
+    };
+    return {
+      expandStatus,
+      show,
+    };
   },
 });
 </script>

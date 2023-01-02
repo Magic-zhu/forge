@@ -32,10 +32,14 @@ export enum VariableType {
 }
 
 export interface Variable {
-  default: any;
-  type: VariableType;
-  readonly: boolean;
   name: string;
+  type: VariableType;
+  description?: string;
+  canEdit?: boolean;
+  readonly?: boolean;
+  private?: boolean;
+  group?: string;
+  value: any;
 }
 
 export default defineComponent({

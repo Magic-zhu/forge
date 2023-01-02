@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div class="editor">
     <div></div>
     <div class="wrapper">
       <div class="header">
@@ -10,7 +10,9 @@
           <VariablePanel />
         </div>
         <div class="middle-box"></div>
-        <div class="detail-panel"></div>
+        <div class="detail-panel">
+          <DetailPanel />
+        </div>
       </div>
       <div class="footer"></div>
     </div>
@@ -20,14 +22,18 @@
 import { defineComponent } from "vue";
 import Header from "./header.vue";
 import VariablePanel from "./variable.vue";
+import DetailPanel from "./detail.vue";
 export default defineComponent({
   components: {
     Header,
     VariablePanel,
+    DetailPanel,
   },
   setup() {
     return {};
   },
 });
 </script>
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+@import "./index.less";
+</style>
