@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <i :class="class" :style="style" aria-hidden="true"></i>
-  </div>
+  <i :class="class" :style="style" aria-hidden="true"></i>
 </template>
 <script lang="ts">
 import { defineComponent, computed } from "vue";
