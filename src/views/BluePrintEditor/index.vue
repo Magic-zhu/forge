@@ -9,7 +9,9 @@
         <div class="left-box">
           <VariablePanel />
         </div>
-        <div class="middle-box"></div>
+        <div class="middle-box">
+          <BlueprintEditor />
+        </div>
         <div class="detail-panel">
           <DetailPanel />
         </div>
@@ -19,15 +21,17 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
-import Header from "./header.vue";
-import VariablePanel from "./variable.vue";
-import DetailPanel from "./detail.vue";
+import {defineComponent} from 'vue';
+import Header from './header.vue';
+import VariablePanel from './variable.vue';
+import DetailPanel from './detail.vue';
+import BlueprintEditor from './blueprint.vue';
 export default defineComponent({
   components: {
     Header,
     VariablePanel,
     DetailPanel,
+    BlueprintEditor,
   },
   setup() {
     return {};
@@ -35,5 +39,5 @@ export default defineComponent({
 });
 </script>
 <style lang="less" scoped>
-@import "./index.less";
+@import './index.less';
 </style>

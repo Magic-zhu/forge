@@ -11,6 +11,8 @@
         v-for="(item, index) in list"
         :key="index"
         :draggable="true"
+        @dragstart="dragStart($event, item)"
+        @dragend="dragEnd"
       >
         <span class="variable-name">{{ item.name }}</span>
         <div class="variable-type">
@@ -22,13 +24,13 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent, watch, reactive, ref, computed } from "vue";
-import { AttributeTitle } from "dark-ui";
+import {defineComponent, watch, reactive, ref, computed} from 'vue';
+import {AttributeTitle} from 'dark-ui';
 
 export enum VariableType {
-  string = "string",
-  number = "number",
-  object = "object",
+  string = 'string',
+  number = 'number',
+  object = 'object',
 }
 
 export interface Variable {
@@ -50,14 +52,14 @@ export default defineComponent({
     const ExpandStatus = ref(true);
     const list = ref<any[]>([
       {
-        name: "测试变量1",
-        type: "string",
-        value: "",
+        name: '测试变量1',
+        type: 'string',
+        value: '',
       },
       {
-        name: "测试变量2",
-        type: "number",
-        value: "",
+        name: '测试变量2',
+        type: 'number',
+        value: '',
       },
     ]);
     const show = () => {
@@ -66,34 +68,45 @@ export default defineComponent({
 
     const getIconColor = (type: string): string => {
       switch (type) {
-        case "string":
-          return "#a139bf";
-        case "number":
-          return "#8bc24a";
+        case 'string':
+          return '#a139bf';
+        case 'number':
+          return '#8bc24a';
+        case 'object':
+          return '#26bbff';
         default:
-          return "";
+          return '';
       }
     };
     const typeLabel = (type: VariableType): string => {
       switch (type) {
         case VariableType.number:
-          return "浮点数";
+          return '浮点数';
         case VariableType.string:
-          return "字符串";
+          return '字符串';
+        case VariableType.object:
+          return '对象';
         default:
-          return "";
+          return '';
       }
     };
+    const dragStart = (event: DragEvent, item: Variable) => {
+      event.dataTransfer?.setData('varible', JSON.stringify(item));
+    };
+    const dragEnd = (ev: DragEvent) => {};
     return {
       ExpandStatus,
       list,
+      // *** methods *** //
       show,
       getIconColor,
       typeLabel,
+      dragStart,
+      dragEnd,
     };
   },
 });
 </script>
 <style lang="less" scoped>
-@import "./variable.less";
+@import './variable.less';
 </style>

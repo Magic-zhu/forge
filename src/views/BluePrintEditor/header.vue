@@ -9,15 +9,15 @@
   </div>
 </template>
 <script lang="ts">
-import Icon from "@components/Icon/Icon.vue";
-import { defineComponent } from "vue";
+import Icon from '@components/Icon/Icon.vue';
+import {defineComponent} from 'vue';
 export default defineComponent({
   setup() {
     return {};
   },
-  components: { Icon },
+  components: {Icon},
 });
 </script>
 <style lang="less" scoped>
-@import "./header.less";
+@import './header.less';
 </style>
