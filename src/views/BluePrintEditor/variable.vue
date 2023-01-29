@@ -21,11 +21,22 @@
         </div>
       </div>
     </div>
+    <div class="variable-panel-footer">
+      <div class="fn">
+        <Icon type="fa-plus-circle" color="#57d97c"></Icon>
+        <span class="label">Add</span>
+      </div>
+      <div class="fn">
+        <Icon type="fa-minus-circle" color="red"></Icon>
+        <span class="label">Delete</span>
+      </div>
+    </div>
   </div>
 </template>
 <script lang="ts">
 import {defineComponent, watch, reactive, ref, computed} from 'vue';
 import {AttributeTitle} from 'dark-ui';
+import Icon from '/src/components/Icon/Icon.vue';
 
 export enum VariableType {
   string = 'string',
@@ -47,6 +58,7 @@ export interface Variable {
 export default defineComponent({
   components: {
     AttributeTitle,
+    Icon,
   },
   setup(props) {
     const ExpandStatus = ref(true);

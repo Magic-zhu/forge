@@ -1,6 +1,8 @@
 @import "../../UI/theme.less";
 .variable-panel {
   width: 300px;
+  background-color: @background;
+  border: 1px solid @border;
   box-sizing: border-box;
   .content {
     width: 100%;
@@ -24,8 +26,40 @@
       align-items: center;
 
       .variable-type-text {
-        margin-left: 10px;
         width: 50px;
+        margin-left: 10px;
+      }
+    }
+  }
+
+  .variable-panel-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 30px;
+    background-color: @footer;
+    .fn {
+      display: flex;
+      align-items: center;
+      width: 50px;
+      margin-right: 5px;
+      padding: 3px 10px;
+      background-color: @background;
+      border-radius: 2px;
+      color: @white;
+      user-select: none;
+      cursor: pointer;
+      .label {
+        margin-left: 6px;
+        font-size: 12px;
+      }
+
+      &:hover {
+        background-color: @dark-background;
+      }
+
+      &:active {
+        background-color: @black;
       }
     }
   }

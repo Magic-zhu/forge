@@ -18,5 +18,6 @@ module.exports = {
   ],
   'rules': {
     'no-unused-vars': 'off',
+    'vue/no-parsing-error': 'off',
   },
 };

@@ -2,7 +2,7 @@
   <i :class="class" :style="style" aria-hidden="true"></i>
 </template>
 <script lang="ts">
-import { defineComponent, computed } from "vue";
+import {defineComponent, computed} from 'vue';
 export default defineComponent({
   props: {
     color: {
@@ -19,8 +19,8 @@ export default defineComponent({
   setup(props) {
     return {
       style: computed(() => ({
-        color: props.color || "white",
-        fontSize: props.size || 10 + "px",
+        color: props.color || 'white',
+        fontSize: props.size || 10 + 'px',
       })),
       class: computed(() => ({
         fa: true,
