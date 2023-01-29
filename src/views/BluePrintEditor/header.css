@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 10px;
+  background-color: #242424;
+  box-sizing: border-box;
+}
+.container .fn {
+  display: flex;
+  align-items: center;
+  padding: 3px 10px;
+  background-color: #333333;
+  border-radius: 2px;
+  color: #ffffff;
+  cursor: pointer;
+  user-select: none;
+}
+.container .fn .label {
+  margin-left: 6px;
+  font-size: 12px;
+}
+.container .fn:hover {
+  background-color: #444444;
+}
+.container .fn:active {
+  background-color: #0f0f0f;
+}

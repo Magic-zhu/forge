@@ -1,22 +1,23 @@
-@import "../../UI/theme.less";
+@import '../../UI/theme.less';
 .container {
-  height: 40px;
-  background-color: @header;
-  box-sizing: border-box;
   display: flex;
   align-items: center;
+  height: 40px;
   padding: 0 10px;
+  background-color: @header;
+  box-sizing: border-box;
   .fn {
     display: flex;
     align-items: center;
     padding: 3px 10px;
-    color: @white;
     background-color: @background;
     border-radius: 2px;
+    color: @white;
     cursor: pointer;
+    user-select: none;
     .label {
-      font-size: 12px;
       margin-left: 6px;
+      font-size: 12px;
     }
 
     &:hover {
