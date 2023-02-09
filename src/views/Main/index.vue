@@ -12,8 +12,7 @@
   </div>
 </template>
 
-<script lang='ts'>
-
+<script lang="ts">
 import ToolBar from '../../Layer/ToolBar/index.vue';
 import Menu from '../../Layer/Menu/index.vue';
 import StatusBar from '../../Layer/StatusBar/index.vue';
@@ -26,19 +25,19 @@ export default {
 };
 </script>
 
-<style lang='less' scoped>
-.wrapper{
-    color: white;
+<style lang="less" scoped>
+.wrapper {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  .main {
     display: flex;
-    flex-direction: column;
-    width: 100vw;
-    height: 100vh;
-    .main{
-      display: flex;
-      flex:1;
-      .center {
-        flex:1;
-      }
+    flex: 1;
+    .center {
+      flex: 1;
     }
+  }
 }
 </style>

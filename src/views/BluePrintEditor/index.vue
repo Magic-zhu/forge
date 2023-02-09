@@ -9,7 +9,7 @@
         <div class="left-box">
           <VariablePanel />
         </div>
-        <div class="middle-box">
+        <div class="middle-box" :style="dynamicWidth">
           <BlueprintEditor />
         </div>
         <div class="detail-panel">
@@ -21,7 +21,7 @@
   </div>
 </template>
 <script lang="ts">
-import {defineComponent} from 'vue';
+import {defineComponent, ref, onMounted} from 'vue';
 import Header from './header.vue';
 import VariablePanel from './variable.vue';
 import DetailPanel from './detail.vue';
@@ -34,7 +34,11 @@ export default defineComponent({
     BlueprintEditor,
   },
   setup() {
-    return {};
+    const dynamicWidth = ref('');
+    onMounted(() => {
+      console.log(document.body.clientWidth);
+    });
+    return {dynamicWidth};
   },
 });
 </script>
