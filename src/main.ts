@@ -1,6 +1,6 @@
 import {createApp} from 'vue';
 import App from './App.vue';
-import './UI/reset.css';
+import './Editor/Style/reset.css';
 import './assets/font/css/font-awesome.min.css';
 import 'dark-ui/dist/style.css';
 import Router from './routes/index';
