@@ -1,1 +1,1 @@
-namespace Kernal {}
+export class Kernal {}

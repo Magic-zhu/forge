@@ -22,10 +22,10 @@
 </template>
 <script lang="ts">
 import {defineComponent, ref, onMounted} from 'vue';
-import Header from './header.vue';
-import VariablePanel from './variable.vue';
-import DetailPanel from './detail.vue';
-import BlueprintEditor from './blueprint.vue';
+import Header from '../BluePrintEditor/header.vue';
+import VariablePanel from '../BluePrintEditor/variable.vue';
+import DetailPanel from '../BluePrintEditor/detail.vue';
+import BlueprintEditor from '../BluePrintEditor/blueprint.vue';
 export default defineComponent({
   components: {
     Header,
