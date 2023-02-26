@@ -17,6 +17,7 @@
         </div>
       </div>
       <div class="footer"></div>
+      <NodePanel />
     </div>
   </div>
 </template>
@@ -26,12 +27,14 @@ import Header from '../BluePrintEditor/header.vue';
 import VariablePanel from '../BluePrintEditor/variable.vue';
 import DetailPanel from '../BluePrintEditor/detail.vue';
 import BlueprintEditor from '../BluePrintEditor/blueprint.vue';
+import NodePanel from '../NodePanel/NodePanel.vue';
 export default defineComponent({
   components: {
     Header,
     VariablePanel,
     DetailPanel,
     BlueprintEditor,
+    NodePanel,
   },
   setup() {
     const dynamicWidth = ref('');
