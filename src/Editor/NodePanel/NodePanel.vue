@@ -9,11 +9,10 @@
           @change="nodeNameChange"
           @input="nodeNameInput"
         />
-        <div class="NodeSelect">
-          <div>sdakshdkahjkd</div>
-          <div>sdakshdkahjkd</div>
-          <div>sdakshdkahjkd</div>
-          <div>sdakshdkahjkd</div>
+        <div class="NodeSelect" v-show="nodeSelectList.length > 0">
+          <div v-for="(item, index) in nodeSelectList" :key="index">
+            {{ item }}
+          </div>
         </div>
       </div>
     </div>
@@ -24,18 +23,20 @@ import {ref} from 'vue';
 import {Input} from 'vexip-ui';
 const nodeName = ref('');
 const nodeSelectList = ref<any>([]);
-const Nodes: any[] = [];
+const Nodes: any[] = ['sdakshdkahjkd', '123', '123456'];
 const nodeNameChange = (value: string) => {
   console.log(value);
 };
 
 const findMatchNode = () => {};
 const nodeNameInput = (value: string) => {
-  nodeSelectList.value = Nodes.map(item => {
-    if (item.indexOf(value)) {
+  const t: any = [];
+  Nodes.forEach(item => {
+    if (item.indexOf(value) !== -1) {
+      t.push(item);
     }
-    return;
   });
+  nodeSelectList.value = t;
 };
 </script>
 <style lang="less">

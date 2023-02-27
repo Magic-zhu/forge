@@ -1,3 +1,4 @@
+@import '../Style/theme.less';
 .NodePanel-wrapper {
   position: fixed;
   z-index: 10;
@@ -20,6 +21,11 @@
       position: absolute;
       top: 35px;
       color: white;
+      background-color: @background;
+      width: 300px;
+      box-sizing: border-box;
+      padding: 10px;
+      border-radius: 4px;
     }
   }
 }

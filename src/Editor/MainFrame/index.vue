@@ -17,7 +17,7 @@
         </div>
       </div>
       <div class="footer"></div>
-      <NodePanel />
+      <NodePanel v-show="false" />
     </div>
   </div>
 </template>
@@ -28,6 +28,7 @@ import VariablePanel from '../BluePrintEditor/variable.vue';
 import DetailPanel from '../BluePrintEditor/detail.vue';
 import BlueprintEditor from '../BluePrintEditor/blueprint.vue';
 import NodePanel from '../NodePanel/NodePanel.vue';
+import {Kernal} from '../Kernal/index';
 export default defineComponent({
   components: {
     Header,
@@ -38,6 +39,7 @@ export default defineComponent({
   },
   setup() {
     const dynamicWidth = ref('');
+    const kernal = new Kernal();
     onMounted(() => {
       console.log(document.body.clientWidth);
     });

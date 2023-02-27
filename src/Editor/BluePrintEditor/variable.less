@@ -2,8 +2,12 @@
 .variable-panel {
   width: 300px;
   background-color: @background;
-  border: 1px solid @border;
+  border-top: 1px solid @border;
+  overflow: hidden;
   box-sizing: border-box;
+  .header {
+    width: 298px;
+  }
   .content {
     width: 100%;
   }
