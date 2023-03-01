@@ -1,4 +1,6 @@
 import chalk from 'chalk-web';
+
+export * from './model/variable.model';
 export class Kernal {
   downKey: string = '';
   constructor() {

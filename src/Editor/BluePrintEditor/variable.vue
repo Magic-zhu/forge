@@ -7,12 +7,15 @@
     />
     <div v-show="ExpandStatus" class="content">
       <div
-        class="variable"
         v-for="(item, index) in list"
+        :class="
+          SelectIndex === index ? 'variable variable-selected' : 'variable'
+        "
         :key="index"
         :draggable="true"
         @dragstart="dragStart($event, item)"
         @dragend="dragEnd"
+        @click="selectVariable(index)"
       >
         <span class="variable-name">{{ item.name }}</span>
         <div class="variable-type">
@@ -105,6 +108,10 @@ export default defineComponent({
         value: '',
       },
     ]);
+
+    // 当前选中Index
+    const SelectIndex = ref(-1);
+
     const show = () => {
       ExpandStatus.value = !ExpandStatus.value;
     };
@@ -138,11 +145,22 @@ export default defineComponent({
     };
     const dragEnd = (ev: DragEvent) => {};
 
+    // 创建新的变量
     const createVar = () => {};
+
+    const selectVariable = (index: number) => {
+      if (SelectIndex.value === index) {
+        SelectIndex.value = -1;
+        return;
+      }
+      SelectIndex.value = index;
+    };
+
     return {
       ExpandStatus,
       list,
       modalActive,
+      SelectIndex,
       // *** methods *** //
       show,
       getIconColor,
@@ -151,6 +169,7 @@ export default defineComponent({
       dragEnd,
       openCreateModal,
       createVar,
+      selectVariable,
     };
   },
 });
