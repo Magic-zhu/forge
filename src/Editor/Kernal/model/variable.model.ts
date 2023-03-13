@@ -9,6 +9,22 @@ export class FVariable {
       label: '变量名称',
       type: 'input',
     },
+    {
+      label: '变量类型',
+      type: 'select',
+    },
+    {
+      label: '变量描述',
+      type: 'input',
+    },
+    {
+      label: '只读',
+      type: 'checkbox',
+    },
+    {
+      label: '私有',
+      type: 'checkbox',
+    },
   ];
 
   // * 变量名称

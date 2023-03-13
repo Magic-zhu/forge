@@ -6,16 +6,22 @@
       @onClick="show"
     />
     <div v-show="expandStatus">
-      <div></div>
+      <div class="attribute">
+        <span class="label">{{ 'nihap' }}</span>
+        <div>
+          <MInput value="sda"></MInput>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 <script lang="ts">
-import { defineComponent, ref } from "vue";
-import { AttributeTitle } from "dark-ui";
+import {defineComponent, ref} from 'vue';
+import {AttributeTitle, MInput} from 'dark-ui';
 export default defineComponent({
   components: {
     AttributeTitle,
+    MInput,
   },
   setup() {
     const expandStatus = ref(true);
@@ -30,5 +36,5 @@ export default defineComponent({
 });
 </script>
 <style lang="less" scoped>
-@import "./header.less";
+@import './detail.less';
 </style>

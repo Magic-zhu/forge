@@ -49,7 +49,7 @@
             <Input></Input>
           </FormItem>
           <FormItem label="变量类型" prop="type">
-            <Select></Select>
+            <Select :options="variableTypeOptions"></Select>
           </FormItem>
         </Form>
       </div>
@@ -66,6 +66,7 @@ export enum VariableType {
   string = 'string',
   number = 'number',
   object = 'object',
+  boolean = 'boolean',
 }
 
 export interface Variable {
@@ -90,6 +91,12 @@ export default defineComponent({
     Select,
   },
   setup(props) {
+    const variableTypeOptions = [
+      {label: '字符串', value: 'string'},
+      {label: '数字', value: 'number'},
+      {label: '对象', value: 'object'},
+      {label: '布尔', value: 'boolean'},
+    ];
     const ExpandStatus = ref(true);
     const modalActive = ref(false);
     const openCreateModal = () => {
@@ -157,6 +164,7 @@ export default defineComponent({
     };
 
     return {
+      variableTypeOptions,
       ExpandStatus,
       list,
       modalActive,
